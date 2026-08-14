@@ -59,14 +59,21 @@
         .container {
             width: 100%;
             max-width: 1100px;
-            padding: 120px 20px 40px 20px;
+            padding: 100px 20px 40px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
+        /* Fejléc logó és cím */
+        .header-logo {
+            width: 80px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
         h1 {
-            font-size: 42px;
+            font-size: 38px;
             font-weight: 900;
             color: #28a745;
             letter-spacing: 1px;
@@ -88,33 +95,39 @@
         .card h2 {
             font-size: 22px;
             color: #28a745;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             border-bottom: 1px solid #1a202c;
             padding-bottom: 10px;
         }
 
-        .card h3 {
-            font-size: 18px;
-            color: #ffffff;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        .card p, .card li {
-            color: #a0a5b5;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-
-        .card ul, .card ol {
-            padding-left: 20px;
+        .rule-item {
             margin-bottom: 15px;
         }
 
-        .highlight {
+        .rule-title {
             color: #ffffff;
             font-weight: 600;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .rule-sub {
+            color: #a0a5b5;
+            padding-left: 15px;
+            font-size: 13px;
+            margin-top: 3px;
+            line-height: 1.5;
+        }
+
+        /* Színes kiemelések */
+        .tilos {
+            color: #ff4d4d;
+            font-weight: bold;
+        }
+
+        .zold, .price {
+            color: #28a745;
+            font-weight: bold;
         }
 
         /* Lábléc */
@@ -156,62 +169,248 @@
     </nav>
 
     <div class="container">
-        <h1>GUIDMTA - Szerver Szabályzat</h1>
+        <!-- Logó a cím felett -->
+        <img src="./logo.png" alt="GUIDMTA Logo" class="header-logo">
+        <h1>GUIDMTA Szerver Szabályzat</h1>
 
         <!-- Alapvető fogalmak -->
         <div class="card">
             <h2>Általános szabályok / fogalmak</h2>
-            <p><span class="highlight">A szerver Nyelve:</span> Hivatalos nyelve a magyar. Ezen nyelvtől eltérni csak fórumon élménykép/off topic részegben lehet.</p>
-            <p><span class="highlight">MG (MetaGaming):</span> OOC információ felhasználása IC. Pl.: Például chatboxból kiolvasott karakter név, majd szerepen belül felhasználod, pl.: feljelented.</p>
-            <p><span class="highlight">LK (Levelkill):</span> Más játékos szándékos ölése, hogy ne érje el a következő szintet.</p>
-            <p><span class="highlight">DM (DeathMatch):</span> Ok nélküli ölése, vagy bántalmazása a másiknak.</p>
-            <p><span class="highlight">RK (RevengeKill):</span> Halálod után visszamész a helyszínre és megölöd az ellenségedet.</p>
-            <p><span class="highlight">SK (SpawnKill):</span> Spawnolási ponton való ölés.</p>
+            
+            <div class="rule-item">
+                <div class="rule-title"><span class="zold">A szerver nyelve:</span> Hivatalos nyelve a magyar. Ezen nyelvtől eltérni csak fórumon élménykép/off topic részlegben lehet.</div>
+            </div>
+            <div class="rule-item">
+                <div class="rule-title"><span class="zold">MG (MetaGaming):</span> OOC információ felhasználása IC. Pl.: chatboxból kiolvasott karakter név, majd szerepen belül felhasználod (pl. feljelented).</div>
+            </div>
+            <div class="rule-item">
+                <div class="rule-title"><span class="zold">LK (Levelkill):</span> Más játékos szándékos ölése, hogy ne érje el a következő szintet.</div>
+            </div>
+            <div class="rule-item">
+                <div class="rule-title"><span class="zold">DM (DeathMatch):</span> Ok nélküli ölés vagy bántalmazás.</div>
+            </div>
+            <div class="rule-item">
+                <div class="rule-title"><span class="zold">RK (RevengeKill):</span> Halálod után visszamész a helyszínre és megölöd az ellenségedet.</div>
+            </div>
+            <div class="rule-item">
+                <div class="rule-title"><span class="zold">SK (SpawnKill):</span> Spawnolási ponton való ölés.</div>
+            </div>
         </div>
 
         <!-- Accountra/karakterre vonatkozó szabályok -->
         <div class="card" id="karakter">
             <h2>Accountra / karakterre vonatkozó szabályok</h2>
-            <p><span class="highlight">Tilos más accountja emelt szintű:</span> Nincs segítségmeléspont Vásárlás.</p>
-            <p><span class="highlight">Karakter adás és csere:</span> A karakter átadása és cseréje szigorúan tilos. Mindenki a saját maga által készített karakterrel kell, hogy játsszon.</p>
-            <p><span class="highlight">Account megosztás:</span> Egy accountot egy ember használhat csak, nem kérheted meg az öcsédet, hogy locsolja meg a farmodat.</p>
-            <p><span class="highlight">OOC kereskedelem:</span> Tilos OOC kereskedelmet minősül be, OOC "fizetni", vagy cserébe adni bármit is IC vagyonért, itemért, stb. vagy accountért. Ugyanakkor nem kell az OOC kereskedelemnek végbemennie, elég a szándék/érdeklődés is a piacon.</p>
+            
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">TILOS</span> más accountjának használata vagy átadása!</div>
+            </div>
+            <div class="rule-item">
+                <div class="rule-title"><span class="zold">Karakter adás és csere:</span> A karakter átadása és cseréje szigorúan <span class="tilos">TILOS</span>. Mindenki a saját maga által készített karakterrel kell, hogy játsszon.</div>
+            </div>
+            <div class="rule-item">
+                <div class="rule-title"><span class="zold">Account megosztás:</span> Egy accountot egy ember használhat csak.</div>
+            </div>
+            <div class="rule-item">
+                <div class="rule-title"><span class="zold">OOC kereskedelem:</span> Szigorúan <span class="tilos">TILOS</span> OOC fizetni vagy cserébe adni bármit is IC vagyonért, itemért vagy accountért! Már a szándék és érdeklődés is kitiltást von maga után.</div>
+            </div>
         </div>
 
-        <!-- PP itemekre vonatkozó szabályok -->
-        <div class="card" id="pp">
-            <h2>PP itemekre vonatkozó szabályok</h2>
-            <p><span class="highlight">Játékmenetet befolyásoló itemeket:</span> Csak abban az esetben lehet használni, ha az nem befolyásolja a többiek játékát, nem változtatja meg az RP szituációt.</p>
-            <p><span class="highlight">A halálból való feltámadás:</span> Respawn kötelező mentőkkel, vagy gyógyítás.</p>
-            <p><span class="highlight">Fikarkert:</span> Tilos széfben autókázni használni.</p>
+        <!-- Újonnan bekerült szabálypontok -->
+        <div class="card" id="ujonnan">
+            <h2>Újonnan bekerült szabálypontok</h2>
+            
+            <div class="rule-item">
+                <div class="rule-title">Halálangyallal <span class="tilos">TILOS</span> menekülni, lövöldözni!</div>
+                <div class="rule-sub">└ Ez frakció független, sem illegális, sem legális nem alakíthat halálangyalt!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">TILOS</span> a kalózkodás!</div>
+                <div class="rule-sub">└ Ez alól kivételt képez a Fegyverhajó!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title">Minden olyan fegyver, ami <span class="tilos">NEM ELREJTETHŐ</span> nagy kalibernek minősül!</div>
+                <div class="rule-sub">└ (PL: Desert Eagle, P90, MP5, M4, stb...)</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title">Indokolatlanul <span class="tilos">NEM</span> lehet nálad nagykaliber!</div>
+                <div class="rule-sub">└ Szerelőnél is el kell raknod! Kivételt képez ha épp újraéledtél, vagy halálangyal van rajtad.</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title">Indokolatlanul <span class="tilos">NEM</span> lehet rajtad golyóálló mellény!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">TILOS</span> lvl 4 alatt illegális tevékenységet végezni!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title">A PG az 1v1-ben is PG!</div>
+                <div class="rule-sub">└ PL: Ha fegyver van rád tartva, de te fegyvert rántasz az PG!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">TILOS</span> legál és illegál frakcióban egyszerre benne lenni!</div>
+            </div>
         </div>
 
-        <!-- Egyedi rendszámokra vonatkozó szabályok -->
-        <div class="card" id="rendszam">
-            <h2>Egyedi rendszámokra vonatkozó szabályok</h2>
-            <p><span class="highlight">A szükséges elő-RP:</span> Az alapszintű RP-t jelent, hogy legalább 20 sornak kell lennie.</p>
-            <p><span class="highlight">Tilos rendszámírás:</span> Olyan szövegek, amik sértik a közerkölcsöt, vagy rasszista kifejezések.</p>
+        <!-- Rablással kapcsolatos szabályok -->
+        <div class="card" id="rablas">
+            <h2>Rablással kapcsolatos szabályok</h2>
+
+            <div class="rule-item">
+                <div class="rule-title">Rablásokhoz szükséges az elő-RP! Ha egyedül rabolsz, olyan karaktert kell alakítani, amely számára nem karakteridegen ez a tevékenység.</div>
+                <div class="rule-sub">└ A valóságban sincs olyan, hogy kettő autómosó között elmész rabolgatni.</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title">A szükséges elő-RP azt jelenti, hogy legalább 20 sornak kell lennie.</div>
+                <div class="rule-sub">└ 20 sor alatt nem lehet megfelelően megszervezni egy másik játékosnak a kirablását.</div>
+                <div class="rule-sub">└ <span class="tilos">Tilos</span> a bind-rp, vagyis a 20-25 sort magadtól kell megírnod!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title">Rablás esetén az áldozat felszólítása esetleges /me /do parancsok használata kötelező.</div>
+                <div class="rule-sub">└ Tudnia kell a játékosnak, hogy egy rablás áldozata lett.</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">Tilos</span> a rablás utáni ölés kivéve, ha valamiféle nyomós indokod van rá!</div>
+                <div class="rule-sub">└ Az nem nyomós indok, hogy látta az arcod vagy tudja hol laksz.</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">Tilos</span> rablás után az áldozatot animba lőni/ütni vagy öngyilkosságra kényszeríteni!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">Tilos</span> rablás közben kulcsokat elvenni a játékostól!</div>
+                <div class="rule-sub">└ Interior, széf, kapu és autó kulcsokat elvenni szigorúan <span class="tilos">tilos</span>!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title">Rablás során a maximális elvehető készpénz: <span class="price">250 000 $</span>.</div>
+                <div class="rule-sub">└ Amennyiben az adott illető többet ad át, megtarthatod a maradék összeget is, de ha visszakéri, azonnal vissza kell adnod!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title">PP-s item rablása szigorúan <span class="tilos">tilos</span>.</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title">Event item rablása szigorúan <span class="tilos">tilos</span>.</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">Tilos</span> hirdetésből kirabolni/elrabolni valakit!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">Tilos</span> 4-es szint alatti, azaz kezdő játékost rabolni.</div>
+            </div>
+        </div>
+
+        <!-- Túszejtésre vonatkozó szabályok -->
+        <div class="card" id="tussejtes">
+            <h2>Túszejtésre vonatkozó szabályok</h2>
+
+            <div class="rule-item">
+                <div class="rule-title">Túszejtést kötelezően előRP-vel (minimum 20 sor) lehet szervezni, nyomós indok kell hozzá.</div>
+                <div class="rule-sub">└ A pénz hiánya nem minősül nyomós indoknak.</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">Tilos</span> megölni a túsztárgyalót!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title">Maximum 1 személy után kérhetnek váltságdíjat.</div>
+                <div class="rule-sub">└ Maximum <span class="price">1 000 000 $</span> lehet a váltságdíj.</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title">Egy frakció 48 órán belül csak egyszer tarthat túszejtést és kérhet érte váltságdíjat!</div>
+            </div>
         </div>
 
         <!-- Átveréssel kapcsolatos szabályok -->
         <div class="card" id="atveres">
             <h2>Átveréssel kapcsolatos szabályok</h2>
-            <p><span class="highlight">Tilos átverni:</span> Ember 50 000 dollár felett.</p>
-            <p><span class="highlight">PP itemek átverése:</span> Tilos bármely olyan tárggyal amivel pénzért/prémiummal vásárolható vagy PP-ből lett vásárolva, tilos átverni.</p>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">Tilos</span> átverni más embereket <span class="price">50 000 $</span> érték felett!</div>
+                <div class="rule-sub">└ Végleges kitiltást von maga után e szabálypont megszegése!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title">A fegyver százalékkal (állapottal) való átverés IC ügynek minősül.</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">Tilos</span> a PP-s itemekkel való átverés.</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">Tilos</span> az Event itemekkel való átverés.</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">Tilos</span> nyereményjáték során való átverés!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">Tilos</span> házzal vagy járművel való átverés.</div>
+            </div>
         </div>
 
         <!-- Rendvédelemre vonatkozó szabályok -->
         <div class="card" id="rendvedelem">
-            <h2>I Rendvédelemre vonatkozó szabályok</h2>
-            <p><span class="highlight">Tilos menteni a túszgyártást:</span> Ha a rendvédelmisek beavatkoznak szigorúan tilos.</p>
-            <p><span class="highlight">Éles fegyver használat:</span> Csak életveszély esetén engedélyezett.</p>
+            <h2>Rendvédelemre vonatkozó szabályok</h2>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">Tilos</span> megölni a túsztárgyalót!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title">A rendőr csakis felszólítás után lőhet kivéve, ha a célpont már előbb tette azt.</div>
+                <div class="rule-sub">└ Fegyvertelenre lőni szigorúan <span class="tilos">tilos</span>!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title">A rendvédelem városban nem pullozhat.</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">Tilos</span> a rendőrt provokálni azért, hogy üldözőbe vegyen!</div>
+            </div>
         </div>
 
-        <!-- Jelenkedéssel / illegális tevékenységekkel kapcsolatos szabályok -->
-        <div class="card" id="illem">
-            <h2>Lövöldözéssel / illegális tevékenységekkel kapcsolatos szabályok</h2>
-            <p><span class="highlight">Tilos jelöletlen rendvédelmi járműre mindaddig:</span> amíg nem bizonyosodsz róla, hogy abban egy rendvédelmi személy tartózkodik.</p>
-            <p><span class="highlight">Fegyvert bárhol se lehet elhelyezni:</span> Szigorúan tilos közterületen fegyverrel rohangálni.</p>
+        <!-- Vadászattal kapcsolatos szabályok -->
+        <div class="card" id="vadaszat">
+            <h2>Vadászattal kapcsolatos szabályok</h2>
+
+            <div class="rule-item">
+                <div class="rule-title">Vadászni csak és kizárólag <span class="zold">FEGYVERENGEDÉLLYEL</span> lehet!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title">Vadászterületen kívül <span class="tilos">TILOS</span> hordani az engedélyezett fegyvereket!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="zold">ZÖLD</span> zónában <span class="tilos">TILOS</span> a rablás!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">TILOS</span> járművel elütni vagy pullozva megölni az állatokat!</div>
+            </div>
+
+            <div class="rule-item">
+                <div class="rule-title"><span class="tilos">TILOS</span> golyóálló mellényt viselni vadászat közben!</div>
+            </div>
         </div>
 
     </div>
