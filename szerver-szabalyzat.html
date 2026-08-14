@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUIDMTA - Szerver Szabályzat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0b0e14;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Navigáció */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #0b0e14f0;
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #1a202c;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            z-index: 1000;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        .nav-brand img {
+            width: 32px;
+            height: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: #a0a5b5;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #28a745;
+        }
+
+        .nav-links span {
+            color: #333a48;
+            font-weight: bold;
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            padding: 110px 20px 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 900;
+            color: #28a745;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        /* Kártyák */
+        .card {
+            background-color: #121722;
+            border: 1px solid #1a202c;
+            border-radius: 12px;
+            padding: 25px 30px;
+            width: 100%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            font-size: 20px;
+            color: #28a745;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #1a202c;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card p {
+            color: #a0a5b5;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .badge-danger {
+            background-color: #dc354522;
+            color: #dc3545;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            border: 1px solid #dc354544;
+        }
+
+        /* Lábléc */
+        footer {
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 20px;
+            border-top: 1px solid #1a202c;
+            color: #a0a5b5;
+            font-size: 13px;
+            margin-top: auto;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .footer-logo img {
+            width: 22px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigáció -->
+    <nav>
+        <a href="index.html" class="nav-brand">
+            <img src="./logo.png" alt="GUIDMTA Logo">
+            GUIDMTA
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Főoldal</a>
+            <span>|</span>
+            <a href="discord-szabalyzat.html">Discord Szabályzat</a>
+            <span>|</span>
+            <a href="szerver-szabalyzat.html" class="active">Szerver Szabályzat</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>GUIDMTA - Szerver Szabályzat</h1>
+
+        <!-- Alapvető fogalmak -->
+        <div class="card">
+            <h2>📜 Általános szabályok / Fogalmak</h2>
+            <p><span class="highlight">A szerver nyelve:</span> Hivatalos nyelve a magyar. Ezen nyelvtől eltérni csak Fórumon/Discordon, az erre kijelölt csatornákban engedélyezett.</p>
+            <p><span class="highlight">MG (MetaGaming):</span> OOC (In-Game chaten kívüli) információ felhasználása IC (karakteren belüli) szituációkban. <span class="badge-danger">TILOS</span></p>
+            <p><span class="highlight">DM (DeathMatch):</span> Ok nélküli vagy irreális indokkal történő emberölés, bántalmazás. <span class="badge-danger">TILOS</span></p>
+            <p><span class="highlight">RK (RevengeKill):</span> Halálod után a helyszínre való visszatérés és az ellenség/gyilkos bosszúból történő megölése. <span class="badge-danger">TILOS</span></p>
+            <p><span class="highlight">SK (SpawnKill):</span> Játékosok megölése a belépési/éledési pontokon, mielőtt reakcióba léphetnének. <span class="badge-danger">TILOS</span></p>
+            <p><span class="highlight">LK (LevelKill):</span> Más játékos szándékos ölése a fejlődésének, szintlépésének megakadályozása céljából. <span class="badge-danger">TILOS</span></p>
+        </div>
+
+        <!-- Accountra/karakterre vonatkozó szabályok -->
+        <div class="card" id="karakter">
+            <h2>👤 Accountra / Karakterre vonatkozó szabályok</h2>
+            <p><span class="highlight">Karakter adás és csere:</span> A karakterek átadása, cseréje és eladása szigorúan tilos. Mindenki kizárólag a saját fiókjával játszhat.</p>
+            <p><span class="highlight">Account megosztás:</span> Egy fiókot csak egy személy használhat. Tilos a fiókodat másnak átadni (pl. testvér, barát) farmgondozás vagy vagyonkezelés céljából is!</p>
+            <p><span class="highlight">OOC Kereskedelem:</span> Szigorúan tilos bármilyen In-Game vagyon, tárgy vagy fiók cseréje/értékesítése valódi pénzért vagy egyéb OOC javakért. Már a szándék és az érdeklődés is azonnali örökös kitiltást von maga után!</p>
+        </div>
+
+        <!-- PP itemekre vonatkozó szabályok -->
+        <div class="card" id="pp">
+            <h2>💎 Prémium (PP) itemekre vonatkozó szabályok</h2>
+            <p><span class="highlight">Játékmenetet befolyásoló tárgyak:</span> Prémium tárgyakat csak úgy szabad használni, hogy az ne rontsa el mások játékélményét és ne forgassa fel az éppen zajló RP szituációt.</p>
+            <p><span class="highlight">Feltámadás / Respawn:</span> Halál esetén kötelező megvárni a mentőket vagy a normál újraéledést, gyorsításra csak megfelelő elő-RP-vel van lehetőség.</p>
+        </div>
+
+        <!-- Egyedi rendszámokra vonatkozó szabályok -->
+        <div class="card" id="rendszam">
+            <h2>🚗 Egyedi rendszámokra vonatkozó szabályok</h2>
+            <p><span class="highlight">Kötelező elő-RP:</span> Az egyedi rendszám igénylése előtt kötelező legalább 20 soros, részletes elő-RP lefolytatása.</p>
+            <p><span class="highlight">Tiltott rendszámok:</span> Tilos olyan rendszámot megadni, amely sérti a közerkölcsöt, faji, vallási vagy politikai uszítást tartalmaz, illetve vulgarizmust jelenít meg. <span class="badge-danger">TILOS</span></p>
+        </div>
+
+        <!-- Átveréssel kapcsolatos szabályok -->
+        <div class="card" id="atveres">
+            <h2>⚠️ Átveréssel kapcsolatos szabályok</h2>
+            <p><span class="highlight">Pénzbeli átverés limit:</span> Más játékos átverése maximálisan $50 000-ig engedélyezett (csak IC szituációban). Ennél magasabb összeggel átverni valakit szigorúan tilos!</p>
+            <p><span class="highlight">PP tárgyak átverése:</span> Bármilyen Prémium Pontból (PP) vásárolt tárggyal, járművel vagy szolgáltatással való átverés szigorúan <span class="badge-danger">TILOS</span>!</p>
+        </div>
+
+        <!-- Rendvédelemre vonatkozó szabályok -->
+        <div class="card" id="rendvedelem">
+            <h2>I Rendvédelemre vonatkozó szabályok</h2>
+            <p><span class="highlight">Túszdrámák és akciók:</span> A rendvédelmi beavatkozások során tilos a helyszínről való indokolatlan kilépés (Quit-RP) vagy a szituáció OOC megtagadása.</p>
+            <p><span class="highlight">Éles fegyverhasználat:</span> Rendvédelmi tagok csak közvetlen életveszély vagy fegyveres támadás esetén használhatnak éles lőfegyvert!</p>
+        </div>
+
+        <!-- Illegális tevékenységek -->
+        <div class="card" id="illem">
+            <h2>🔫 Lövöldözés / Illegális tevékenységek</h2>
+            <p><span class="highlight">Civil fegyverviselés:</span> Tilos közterületen, nyíltan nagykaliberű vagy látható fegyverrel közlekedni megfelelő nyomós indok és RP nélkül.</p>
+            <p><span class="highlight">Rendvédelmi járművek megtámadása:</span> Jelöletlen rendőri járműre tüzet nyitni mindaddig tilos, amíg meg nem bizonyosodsz róla, hogy az benne ülő személy valóban rendvédelmi tag és fenyegetést jelent.</p>
+        </div>
+
+    </div>
+
+    <!-- Lábléc -->
+    <footer>
+        <div class="footer-logo">
+            <img src="./logo.png" alt="GUIDMTA Logo">
+            GUIDMTA
+        </div>
+        <div>A legmodernebb magyar RolePlay közösség © 2026</div>
+    </footer>
+
+</body>
+</html>
