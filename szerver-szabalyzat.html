@@ -6,92 +6,129 @@
     <title>GUIDMTA - Szerver Szabályzat</title>
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-        }
-        body {
-            background-color: #0f172a;
-            color: #f8fafc;
+            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            padding-bottom: 50px;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0b0e14;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         /* Navigáció */
         nav {
-            background-color: #1e293b;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 25px 40px;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #28a745;
+        }
+
+        nav span {
+            color: #333a48;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            padding: 120px 20px 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 900;
+            color: #28a745;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Kártyák */
+        .card {
+            background-color: #121722;
+            border: 1px solid #1a202c;
+            border-radius: 12px;
+            padding: 30px;
+            width: 100%;
+            margin-bottom: 25px;
+            scroll-margin-top: 100px;
+        }
+
+        .card h2 {
+            font-size: 22px;
+            color: #28a745;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #1a202c;
+            padding-bottom: 10px;
+        }
+
+        .card p, .card li {
+            color: #a0a5b5;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* Lábléc */
+        footer {
+            width: 100%;
+            max-width: 1100px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
-            border-bottom: 2px solid #22c55e;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 30px 20px;
+            border-top: 1px solid #1a202c;
+            color: #a0a5b5;
+            font-size: 14px;
         }
-        .nav-brand {
+
+        .footer-logo {
             display: flex;
             align-items: center;
             gap: 10px;
-            color: #fff;
-            text-decoration: none;
             font-weight: bold;
-            font-size: 1.2rem;
+            color: #ffffff;
         }
-        .nav-brand img {
-            height: 30px;
-        }
-        .nav-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover, .nav-links a.active {
-            color: #22c55e;
-        }
-        .nav-links span {
-            color: #475569;
-        }
-        /* Konténer & Kártyák */
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-        .card {
-            background-color: #1e293b;
-            border: 1px solid #334155;
-            border-left: 5px solid #22c55e;
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-        }
-        .card h2 {
-            color: #22c55e;
-            margin-bottom: 20px;
-            font-size: 1.4rem;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 10px;
-        }
-        .rule-list p {
-            margin-bottom: 15px;
-            background: #0f172a;
-            padding: 12px 15px;
-            border-radius: 6px;
-            border: 1px solid #1e293b;
-        }
-        .rule-list strong {
-            color: #38bdf8;
-        }
-        .rule-list em {
-            color: #cbd5e1;
-            font-style: normal;
-            display: block;
-            margin-top: 4px;
-            padding-left: 15px;
+
+        .footer-logo img {
+            width: 25px;
+            height: auto;
         }
     </style>
 </head>
@@ -99,288 +136,138 @@
 
     <!-- Navigáció -->
     <nav>
-        <a href="index.html" class="nav-brand">
-            <img src="./logo.png" alt="GUIDMTA Logo">
-            GUIDMTA
-        </a>
-        <div class="nav-links">
-            <a href="index.html">Főoldal</a>
-            <span>|</span>
-            <a href="discord-szabalyzat.html">Discord Szabályzat</a>
-            <span>|</span>
-            <a href="szerver-szabalyzat.html" class="active">Szerver Szabályzat</a>
-        </div>
+        <a href="index.html">Főoldal</a>
+        <span>|</span>
+        <a href="discord-szabalyzat.html">Discord Szabályzat</a>
+        <span>|</span>
+        <a href="szerver-szabalyzat.html" style="color: #28a745;">Szerver Szabályzat</a>
     </nav>
 
-    <!-- Fő tartalom -->
     <div class="container">
+        <h1>GUIDMTA - Szerver Szabályzat</h1>
 
-        <!-- 1. KÁRTYA: Kommunikációt elősegítő szavak, fogalmak -->
+        <!-- Kommunikációt elősegítő szavak, fogalmak -->
         <div class="card">
             <h2>💬 Kommunikációt elősegítő szavak, fogalmak</h2>
-            <div class="rule-list">
-                <p><strong>HQ:</strong> ↳ <em>Egy adott frakció bázisa.</em></p>
-                <p><strong>IRL:</strong> ↳ <em>In Real Life > a valóságban.</em></p>
-                <p><strong>IC:</strong> ↳ <em>In Character, karakteren belüli dolgok. "T" Gomb megnyomásával használható az IC chat.</em></p>
-                <p><strong>OOC:</strong> ↳ <em>Out Of Character, karakteren kívüli dolgok. "B" Gomb megnyomásával használható az OOC chat.</em></p>
-                <p><strong>PK:</strong> ↳ <em>Panaszkönyv. Ha valaki a szerveren szabályzati vétséget követ el, képpel / loggal bizonyítva egy fórum topicot nyitva lehet panaszt tenni ellene.</em></p>
-                <p><strong>Crash:</strong> ↳ <em>Játékhiba, valami ok folytán a GTA San Andreas leállása.</em></p>
-                <p><strong>Adminisztrátor (admin):</strong> ↳ <em>A szerver, és a játékosok segítői, rendben tartói.</em></p>
-                <p><strong>Kick:</strong> ↳ <em>Szerverről való kirúgás.</em></p>
-                <p><strong>Jail:</strong> ↳ <em>Szabályzat megszegése esetén kapható büntetés. Börtön, 4 fal között töltött idő. A játékban nem lehet részt venni a jail időtartama alatt.</em></p>
-                <p><strong>Ban:</strong> ↳ <em>Időleges vagy végleges kitiltás a játékból.</em></p>
-                <p><strong>RP:</strong> ↳ <em>Roleplay Annyit tükröz, szerepjáték, való élettel megegyező viselkedés.</em></p>
-                <p><strong>IG:</strong> ↳ <em>In Game, játékon belüli történések.</em></p>
-                <p><strong>AFK:</strong> ↳ <em>Away From Keyboard Nincs a gépnél. A szerveren 20 percet lehet AFK-olni, ez után kicket kaphat az illető.</em></p>
-                <p><strong>CK:</strong> ↳ <em>Characterkill, avagy kivégzés.</em></p>
-                <p><strong>TGF:</strong> ↳ <em>Tagfelvétel, pl egy adott frakcióba.</em></p>
-                <p><strong>RTC:</strong> ↳ <em>Jármű respawnolása.</em></p>
-                <p><strong>Fix:</strong> ↳ <em>Egy jármű megjavítása.</em></p>
-                <p><strong>Get:</strong> ↳ <em>Játékos vagy jármű teleportálás.</em></p>
-                <p><strong>Spawn:</strong> ↳ <em>Leéledési pont.</em></p>
-                <p><strong>PP:</strong> ↳ <em>Prémium Pont.</em></p>
-                <p><strong>CP:</strong> ↳ <em>Check Point Pl.: Interior bejárat.</em></p>
-                <p><strong>SSC:</strong> ↳ <em>Rise Slot Coin, kaszinó zseton.</em></p>
-                <p><strong>Item:</strong> ↳ <em>Tárgy a játékon belül.</em></p>
-                <p><strong>NonScript Frakció:</strong> ↳ <em>Script nélküli frakció a szerveren.</em></p>
-            </div>
+            <p><span class="highlight">HQ:</span> Egy adott frakció bázisa.</p>
+            <p><span class="highlight">IRL:</span> In Real Life > a valóságban.</p>
+            <p><span class="highlight">IC:</span> In Character, karakteren belüli dolgok. "T" gomb megnyomásával használható az IC chat.</p>
+            <p><span class="highlight">OOC:</span> Out Of Character, karakteren kívüli dolgok. "B" gomb megnyomásával használható az OOC chat.</p>
+            <p><span class="highlight">PK:</span> Panaszkönyv. Ha valaki a szerveren szabályzati vétséget követ el, képpel/loggal bizonyítva fórumon panaszt lehet tenni ellene.</p>
+            <p><span class="highlight">Crash:</span> Játékhiba, a GTA San Andreas váratlan leállása.</p>
+            <p><span class="highlight">Adminisztrátor (Admin):</span> A szerver és a játékosok segítői, rendben tartói.</p>
+            <p><span class="highlight">Kick:</span> Szerverről való kirúgás.</p>
+            <p><span class="highlight">Jail:</span> Szabályzat megszegése esetén kapható büntetés (börtön). A játékban nem lehet részt venni az időtartama alatt.</p>
+            <p><span class="highlight">Ban:</span> Időleges vagy végleges kitiltás a játékból.</p>
+            <p><span class="highlight">RP:</span> Roleplay, azaz szerepjáték, a való élettel megegyező viselkedés.</p>
+            <p><span class="highlight">IG:</span> In Game, játékon belüli történések.</p>
+            <p><span class="highlight">AFK:</span> Away From Keyboard, nincs a gépnél. A szerveren 20 percet lehet AFK-olni, ez után kick jár érte.</p>
+            <p><span class="highlight">CK:</span> Characterkill, avagy karakterhalál / kivégzés.</p>
+            <p><span class="highlight">TGF:</span> Tagfelvétel (pl. egy adott frakcióba).</p>
+            <p><span class="highlight">RTC:</span> Jármű respawnolása.</p>
+            <p><span class="highlight">Fix:</span> Jármű megjavítása.</p>
+            <p><span class="highlight">Get:</span> Játékos vagy jármű teleportálása.</p>
+            <p><span class="highlight">PP:</span> Prémium Pont.</p>
         </div>
 
-        <!-- 2. KÁRTYA: Általános szabályok / Fogalmak -->
+        <!-- Általános szabályok / Fogalmak -->
         <div class="card">
             <h2>📜 Általános szabályok / Fogalmak</h2>
-            <div class="rule-list">
-                <p><strong>Szerver hivatalos nyelve:</strong> A szerver hivatalos nyelve a magyar. <br>↳ <em>Ezen nyelvtől eltérni csak fórumon élménykép/off topic részlegben lehet.</em></p>
-                <p><strong>MG (MetaGaming):</strong> OOC információ felhasználása IC. <br>↳ <em>Példa: chatboxból kiolvasod valaki nevét, majd szerepen belül felhasználod, pl.: feljelented.</em></p>
-                <p><strong>DM (DeathMatch):</strong> Ok nélküli ölés. <br>↳ <em>Példa: az utcán valakit véletlenszerűen megölsz, esetleg olyan indokból, amiért a valóságban sem tennéd, pl.: ellopják a kocsid, beszólt, karamboloztál vele.</em></p>
-                <p><strong>RK (RevengeKill):</strong> Halál utáni bosszú. <br>↳ <em>Példa: megölnek, halálod után kórházba kerülsz, ilyenkor a gyilkosod nem keresheted fel és ölheted meg, tűzharc esetén az esemény lezajlásáig nem térhetsz vissza a helyszínre.</em></p>
-                <p><strong>PG (PowerGaming):</strong> Hősködés, olyan dolog amit a valóságban nem mernél megtenni. <br>↳ <em>Példa: többen fegyvert fognak rád és nem teljesíted kérésüket, ellenszegülsz.</em></p>
-                <p><strong>DB (DriveBy):</strong> Emberölés járművel. <br>↳ <em>Példa: tilos ráállni járművel másik játékosra és úgy megölni.</em></p>
-                <p><strong>SK (SpawnKill):</strong> Spawnoláskor ölés. <br>↳ <em>Példa: tilos megölni azt a játékost aki éppen egy épületből bemegy, kimegy mindaddig, amíg nem tölt be neki a pálya, nem mozog el cp-ből (kb 3-4 másodperc), továbbá azt, aki éppen bejelentkezett a játékba.</em></p>
-                <p><strong>Force RP:</strong> Tilos a saját RP-det más játékosra ráerőltetned, illetve másik játékos helyett RP-zned! <br>↳ <em>Példa: tilos ilyet írnod, hogy /me megüti és ezért ő meghal.</em></p>
-                <p><strong>NonRP:</strong> Nem RP-s cselekedet. <br>↳ <em>Példa: tilos olyan dolgot tenni a játékban amit a valóságban sem tennéd meg, leugratsz kocsival egy hegyről, stb.</em></p>
-                <p><strong>Szereptévesztés:</strong> Minden olyan cselekedet amely nem tükrözi a karaktered személyiségét. <br>↳ <em>Példa: mentősként anyázol a rendőrnek majd fejbe lövöd.</em></p>
-                <p><strong>Interiorok bejelentése:</strong> Minden páratlan hónap 20. áig. A be nem jelentett interiorok törlődnek. <br>↳ <em>Bejelentési kötelezettség: 2 havonta 2 hónapon belül, in game, a városházán tudjuk bejelenteni bármilyen interiorunkat ingatlanunkat, ezzel jelezve megerősítve az igényt annak létezésére. Ennek állapota lekérdezhető UCP-n és a játékon belül a dashboardban. Amennyiben az interior nem kerül bejelentésre, törlésre kerül, mely folyamat nem visszafordítható. Amennyiben a felhasználó nem tudja az interior bejelentést véghezvinni, úgy azt más felhasználó vagy a játékszerver nem tudja átvállalni.</em></p>
-                <p><strong>Interiorok, interior csoportok eladása:</strong> Interiorok, interior csoportok csak egyben eladhatóak. Tilos külön eladni egy házat és a hozzá tartozó többi interiort. <br>↳ <em>Egy interiort/házat és a hozzá tartozó többi interiort csak egy ember birtokolhat és csak egyben lehet eladni. Egy magánbirtok esetében minden interiornak egy tulajdonosa kell, hogy legyen és csak egyben és egyszerre lehet eladni. Egy házat és a hozzá tartozó interiorokat/garázsokat csak egy ember birtokolhat, nem lehet több tulajdonosa. Ezeket is csak egyben lehet eladni.</em></p>
-            </div>
+            <p><span class="highlight">A szerver hivatalos nyelve:</span> Hivatalos nyelve a magyar[cite: 2]. Ezen nyelvtől eltérni csak fórumon élménykép/off topic részlegen lehet[cite: 2].</p>
+            <p><span class="highlight">MG (MetaGaming):</span> OOC információ felhasználása IC[cite: 2]. Például chatboxból kiolvasott karakter név, majd szerepen belül felhasználod, pl.: feljelented[cite: 2].</p>
+            <p><span class="highlight">LK (Levelkill):</span> Más játékos szándékos ölése, hogy ne érje el a következő szintet[cite: 2].</p>
+            <p><span class="highlight">DM (DeathMatch):</span> Ok nélküli ölés, vagy bántalmazása a másiknak[cite: 2].</p>
+            <p><span class="highlight">RK (RevengeKill):</span> Halálod után visszamész a helyszínre és megölöd az ellenségedet[cite: 2].</p>
+            <p><span class="highlight">SK (SpawnKill):</span> Spawnolási ponton való ölés[cite: 2].</p>
+            <p><span class="highlight">PG (PowerGaming):</span> Hősködés, olyan dolog, amit a valóságban nem mernél megtenni (pl. fegyverrel a fejeden ellenszegülsz).</p>
+            <p><span class="highlight">DB (DriveBy):</span> Emberölés járművel, ráállva a másikra.</p>
+            <p><span class="highlight">Force RP:</span> Tilos a saját RP-det másra erőltetni vagy másik helyett RP-zni.</p>
+            <p><span class="highlight">NonRP:</span> Nem RP-s cselekedet, olyan dolog, amit a valóságban sem tennél meg.</p>
         </div>
 
         <!-- Forgalmas helyek -->
         <div class="card">
             <h2>📍 Forgalmas helyek</h2>
-            <div class="rule-list">
-                <p><strong>Forgalmas területek listája:</strong> Az alábbi helyek forgalmas területnek számítanak: <br>↳ <em>Szerelőtelepek, kórházak, autókereskedések, használtautó-kereskedések, városháza, valamint minden rendvédelemhez köthető blip.</em></p>
-            </div>
+            <p><span class="highlight">Forgalmas területek listája:</span> Szerelőtelepek, kórházak, autókereskedések, használtautó-kereskedések, városháza, valamint minden rendvédelemhez köthető blip.</p>
         </div>
 
-        <!-- 3. KÁRTYA: Adminisztrátorokkal kapcsolatos szabályok -->
+        <!-- Adminisztrátorokkal kapcsolatos szabályok -->
         <div class="card">
             <h2>🛡️ Adminisztrátorokkal kapcsolatos szabályok</h2>
-            <div class="rule-list">
-                <p><strong>Adminisztrátorok feladata:</strong> Az adminok a szerver szabályzatának betartatásáért felelnek a játékotok folyamán, amennyiben nem értesz vele egyet, vagy jogtalannak találod a döntését, abban az esetben lehetőséged van jelezni felénk az adminpanaszkönyvben! Kérdésekkel az adminsegédekhez forduljatok! <br>↳ <em>Panaszkönyvet fórumon tudsz nyitni az adminisztrátorokra.</em></p>
-                <p><strong>Admin rágalmazása / minősítése:</strong> Az admint bármilyen formában rágalmazni/minősíteni tilos! <br>↳ <em>Ilyen esetben kitiltással szankcionálnak az adminok.</em></p>
-                <p><strong>Hazugság adminnak:</strong> Tilos az adminoknak hazudni! <br>↳ <em>Amennyiben megpróbálod átverni az admint kitiltásban részesülsz.</em></p>
-                <p><strong>Javítás / Teleport kérése:</strong> Admintól tilos javítást, tankolást, jármű teleportálást, skint kérni. <br>↳ <em>Az adminok nem szeretetszolgálat. Ha probléma van illedelmesen szólsz és ha a helyzet megkívánja fog fixet stb adni.</em></p>
-                <p><strong>Jailből való kivétel:</strong> Csak az az admin vehet ki jailből aki berakott! <br>↳ <em>Nem vehet ki senki jailből téged csak az aki berakott, vagy ha Fő/SzuperAdmin felülbírálja az adott admin szankcióját.</em></p>
-                <p><strong>Segítségkérés & Reportok:</strong> Segítségkérés során kötelező az adminisztrátorral tiszteletteljesen beszélni. Gondodat, panaszodat, kérésedet mindig egyértelműen, röviden fogalmazd meg. <br>↳ <em>Fölösleges reportokat próbáljátok meg hanyagolni.</em></p>
-                <p><strong>Unban kérelem:</strong> Szerveren tilos az adminoktól unbant kérni! Csak fórumon az unban kérelem topicban lehet! <br>↳ <em>Haverodnak, cimborádnak ne szerveren próbálj unbant intézni, erre van a fórum.</em></p>
-                <p><strong>Adminok értékelése:</strong> Szerveren tilos az adminokat negatívan értékelni csak azért, mert neked nem tetszett a bírálata/nem adott fixet, vagy mert megsértődtél, jogosan szankcionált. <br>↳ <em>Csak olyan esetben lehet negatívan értékelni az admint ha az ügyintézés alatt a stílusával volt probléma, esetleg hibázott. Azért mert nem ad fixet vagy bármilyen nem normális dolog miatt negatív értékelés leadás bant vonhat maga után.</em></p>
-                <p><strong>Széf- és autókulcsok:</strong> Széfet csak olyan esetben vegyetek mástól, ha megbizonyosodtok róla, hogy tényleg az övé. Azaz, nála van a kulcs és átadja neked. Semmilyen admin NEM másol széfkulcsot, csak frakciószéfhez frakciótulajdonosnak. <br>↳ <em>Interior és autókulcsokat sem duplikálunk, mindenhez 1 kulcs lehet csak.</em></p>
-            </div>
+            <p><span class="highlight">Adminisztrátorok feladata:</span> Az adminok a szabályzat betartatásáért felelnek. Nem értesz egyet a döntésével? Panaszkönyvet nyithatsz fórumon! Kérdésekkel az adminsegédekhez forduljatok.</p>
+            <p><span class="highlight">Admin rágalmazása / minősítése:</span> Az admint bármilyen formában rágalmazni vagy minősíteni tilos, kitiltást von maga után.</p>
+            <p><span class="highlight">Hazugság adminnak:</span> Szigorúan tilos az adminoknak hazudni vagy átverni őket.</p>
+            <p><span class="highlight">Segítségkérés:</span> Admintól tilos indokolatlanul fixet, tankolást vagy skint kérni. Kötelező a tiszteletteljes stílus.</p>
+            <p><span class="highlight">Unban kérelem:</span> Szerveren tilos az adminoktól unbant kérni, kizárólag fórumon lehetséges.</p>
         </div>
 
-        <!-- 4. KÁRTYA: Accountra / Karakterre vonatkozó szabályok -->
-        <div class="card">
-            <h2>👤 Accountra / Karakterre vonatkozó szabályok</h2>
-            <div class="rule-list">
-                <p><strong>Emeltdíjas hívás PP vásárláshoz:</strong> Tilos más accountjára emeltdíjas Hívás segítségével PrémiumPontot vásárolni. <br>↳ <em>Visszaélések miatt tilos az ilyen jellegű üzletelés.</em></p>
-                <p><strong>Karakter adás-vétel és csere:</strong> A karakter árusítása és cseréje szigorúan tilos. Mindenki a saját maga által készített karakterével kell, hogy játsszon. <br>↳ <em>Ilyen esetben örökös kitiltásban részesülsz.</em></p>
-                <p><strong>Account megosztás:</strong> Tilos az account megosztás. <br>↳ <em>Egy accountot egy ember használhat csak, nem kérheted meg az öcsit, hogy locsolja meg a farmodat.</em></p>
-                <p><strong>OOC Kereskedelem:</strong> Tilos az OOC kereskedelem. <br>↳ <em>OOC kereskedelemnek minősül ha OOC "fizetsz", vagy cserébe adsz bármit is IC vagyonért, itemért, stb.. vagy accountért. Ugyanakkor nem kell az OOC kereskedelemnek végbemennie, elég a szándék/érdeklődés is iránta.</em></p>
-                <p><strong>OOC Kereskedelem buktatása:</strong> Tilos az OOC kereskedelem buktatása. <br>↳ <em>Nem buktathatsz le más OOC kereskedőket arra hivatkozva, hogy te jót akartál. Ilyen esetben te is örökös kitiltásban részesülsz.</em></p>
-                <p><strong>Vagyonátruházás:</strong> Tilos a vagyonátruházás. <br>↳ <em>Nem adhatod át másnak az InGame megszerzett vagyonodat, hogy kamatozzon vagy mert meguntad a játékot.</em></p>
-                <p><strong>Multiaccount:</strong> Egy játékos egy felhasználói fiók használatára jogosult! <br>↳ <em>Amennyiben egy felhasználó aktívan használ két, vagy több felhasználói fiókot, mindegyik végleges kitiltásban részesülhet!</em></p>
-                <p><strong>Bant kapott karakter:</strong> Ha egy karaktered bant kap, tilos másikkal játszanod, ennek megszegése örökös szerverről való kitiltást vonhat maga után. <br>↳ <em>Ha bant kaptál nyiss unban kérelmet.</em></p>
-                <p><strong>Új számítógép (Serial váltás):</strong> Ha új számítógépet vettél köteles vagy a régi felhasználódat használni. <br>↳ <em>Új számítógép esetén serial váltást kell írnod és a régi accountodat folytatni. Nem kezdhetsz újat.</em></p>
-            </div>
+        <!-- Accountra / karakterre vonatkozó szabályok -->
+        <div class="card" id="karakter">
+            <h2>👤 Accountra / karakterre vonatkozó szabályok</h2>
+            <p><span class="highlight">Tilos más accountjára emeltdíjas hívással PP-t vásárolni:</span> Nincs segítségmeléspont vásárlás más nevére[cite: 2].</p>
+            <p><span class="highlight">Karakter adás és csere:</span> A karakter átadása és cseréje szigorúan tilos[cite: 2]. Mindenki a saját maga által készített karakterrel kell, hogy játsszon[cite: 2].</p>
+            <p><span class="highlight">Account megosztás:</span> Egy accountot egy ember használhat csak, nem kérheted meg az öcsédet, hogy locsolja meg a farmodat[cite: 2].</p>
+            <p><span class="highlight">OOC kereskedelem:</span> Tilos OOC kereskedelmet folytatni, OOC "fizetni", vagy cserébe adni bármit is IC vagyonért, itemért, stb. vagy accountért[cite: 2]. Ugyanakkor nem kell az OOC kereskedelemnek végbemennie, elég a szándék/érdeklődés is[cite: 2].</p>
+            <p><span class="highlight">Multiaccount:</span> Egy játékos egy felhasználói fiók használatára jogosult! Több fiók használata végleges kitiltással járhat.</p>
         </div>
 
-        <!-- 5. KÁRTYA: OOC szabályok -->
-        <div class="card">
-            <h2>💬 OOC szabályok</h2>
-            <div class="rule-list">
-                <p><strong>Szerverhirdetés:</strong> Tilos más szerver hirdetése. <br>↳ <em>A szerverhirdetés szigorúan tilos, szerverről való kitiltást von maga után.</em></p>
-                <p><strong>OOC Szidás:</strong> Az OOC szidás szigorúan tilos. Ez egy olyan cselekmény, amivel a személyt magát a karakter tulajdonosát szidod. <br>↳ <em>OOC mindenkinek köteles vagy megadni a tiszteletet.</em></p>
-                <p><strong>OOC Hazugság:</strong> Szigorúan tilos OOC hazudni. <br>↳ <em>Kivéve üzletelésnél vagy elrablásnál.</em></p>
-                <p><strong>Segédprogramok (Cheats/Botok):</strong> A játékban szigorúan tilos bármiféle segédprogram használata, ami által a többi játékoshoz képest előnyre tehetsz szert. <br>↳ <em>Példa: AntiAFK, automata zsetonpakoló a kaszinóban stb.</em></p>
-                <p><strong>Bugkihasználás:</strong> Szigorúan tilos a szerveren bugot kihasználni. <br>↳ <em>Bármilyen hibát azonnal jelezned kell, nem használhatod azokat a saját javadra.</em></p>
-                <p><strong>PK-val való fenyegetőzés:</strong> Szigorúan tilos a PK-val való fenyegetőzés, mások nonosnak minősítése. <br>↳ <em>A PK és a véleményed magánügy, tartsd ezeket magadba.</em></p>
-                <p><strong>Frakció Jumperkedés:</strong> Tilos a frakció "jumperkedés". <br>↳ <em>Rövid időn belül frakció váltás, frakció szabályzat szabja meg, hogy mennyi időt kell bent töltened mielőtt kilépnél.</em></p>
-                <p><strong>Floodolás:</strong> A szerveren tilos floodolni. <br>↳ <em>Tilos flooddal zavarni más játékosokat, laggoltatni a szervert.</em></p>
-                <p><strong>TeamSpeak használata:</strong> TeamSpeak beszélgetést semmiféleképpen sem viheted át IG eseménybe. <br>↳ <em>Ez MG-nek minősül.</em></p>
-                <p><strong>Kamat AFK:</strong> Tilos AFK-olni hosszabb ideig a kamat miatt. <br>↳ <em>Szélsőséges esetekben vagyontörlés. Ne a kamat miatt járj fel a szerverre.</em></p>
-                <p><strong>Loghamisítás:</strong> Tilos logot hamisítani, csak eredeti formájában küldheted a logodat tovább. <br>↳ <em>A loghamisítás végleges kitiltást von maga után.</em></p>
-            </div>
+        <!-- PP itemekre vonatkozó szabályok -->
+        <div class="card" id="pp">
+            <h2>💎 PP itemekre vonatkozó szabályok</h2>
+            <p><span class="highlight">Játékmenetet befolyásoló itemeket:</span> Csak abban az esetben lehet használni, ha az nem befolyásolja a többiek játékát, nem változtatja meg az RP szituációt[cite: 2].</p>
+            <p><span class="highlight">A halálból való feltámadás:</span> Respawn kötelező mentőkkel, vagy gyógyítás[cite: 2].</p>
+            <p><span class="highlight">Fixkártya / Fikarkert:</span> Tilos széfben autókázni használni[cite: 2]. Üldözés végén csak akkor szabad megjavítani a járművet, ha leráztad az üldözőket.</p>
         </div>
 
-        <!-- 6. KÁRTYA: Egyéb szabályok -->
-        <div class="card">
-            <h2>⚠️ Egyéb szabályok</h2>
-            <div class="rule-list">
-                <p><strong>Hullagyalázás:</strong> Tilos a hullagyalázás. <br>↳ <em>Hullagyalázásnak számít ha megrúgdosol valakit, vagy ha pl. miután megölted odafutsz hozzá és kineveted, vagy sértő szavakkal illeted.</em></p>
-                <p><strong>Bizonylat nélküli fegyverek:</strong> Minden olyan fegyver lefoglalható/elvehető amelyhez nincs bizonylat. <br>↳ <em>Ha egy fegyveren kettő figyelmeztetés van akkor a rendvédelem elveheti azt.</em></p>
-                <p><strong>Járművek tárolása interior előtt:</strong> Tilos három járműnél többet tárolni egy interior előtt. <br>↳ <em>Egy interiornak számít az is ha egymás mellé van letéve egy ház és egy garázs.</em></p>
-                <p><strong>Látható fegyverviselés:</strong> Tilos indokolatlanul látható fegyvert viselni. <br>↳ <em>Rejtett fegyver korlátlanul lehet nálad.</em></p>
-                <p><strong>RP alóli kilépés:</strong> Tilos az RP szituáció közbeni kilépés. <br>↳ <em>Ha menned kell akkor a másik felekkel kell a kilépés előtt egyeztetned, hogy miként zárjátok le az RP-t.</em></p>
-                <p><strong>Halál RP / Öngyilkosság:</strong> Tilos halált RP-zned akkor, ha épp egy RP-ben jelen vagy, vagy a karaktered jelenléte fontos a körülötted lévők számára. A halál RP (öngyilkosság) kizárólag akkor engedélyezett, ha az adott karaktered történetét akarod lezárni nyugodt körülmények között. <br>↳ <em>Ilyen esetben új életet kell kezdened és nevet kell váltanod. Tilos a társaddal megölnötök egymást abból az indokból, hogy ne csukjanak le a rendőrök.</em></p>
-                <p><strong>Élet feltöltése (Heal kártya):</strong> Tilos az élet feltöltése lövöldözés, üldözés közben, vagy közvetlen után! <br>↳ <em>Lövöldözés, üldözés közben a vitamin, gyógyszer és heal kártya használata tilos.</em></p>
-                <p><strong>/megpróbál használata bilincsben:</strong> Bilincsben reális körülmények között használható a /megpróbál parancs! <br>↳ <em>Például: /megpróbálja lábon rúgni a rendőrt.</em></p>
-                <p><strong>Fegyver elrakása széfbe/kocsiba:</strong> Tilos a rendvédelmi szervek elől RP nélkül elrakni a fegyvert, egy esetleges lövöldözés során (széffel való visszaélés). Kötelező ilyen esetben 2-3 soros RP-t írni! <br>↳ <em>Ugyanez vonatkozik arra is ha kocsiba dugod el a fegyvert.</em></p>
-                <p><strong>Kényes RP cselekmények:</strong> Tilos beleegyezés nélkül olyan RP tevékenységet folytatni, melyet lehetséges, hogy nem tud feldolgozni IRL az illető. <br>↳ <em>Például: megerőszakolás, végtag levágás, durvább kínzás, stb.</em></p>
-                <p><strong>IC - OOC keverése:</strong> IC – OOC keverése szigorúan tilos, mivel MG-nek minősül. OOC információt nem használhatsz fel IC. <br>↳ <em>OOC chatnek szigorúan tilos használni az IC chatet.</em></p>
-                <p><strong>Kaszinó zsetonok (SSC):</strong> Casino zseton, azaz SSC bármilyen elbuggolásáért/elvesztéséért a szerver nem vállal felelősséget! <br>↳ <em>Nem tudjuk, nem áll módunkban visszaadni! Mindenki saját felelősségre casinozzon.</em></p>
-                <p><strong>Rádió és Telefon OOC használata:</strong> Tilos a rádiót és a telefont OOC kommunikációra használni. <br>↳ <em>Nem használhatod a telefon egyik funkcióját sem OOC információ közlésére (SMS, hívás, hirdetés). Rádió kivétel: ha RP admini beavatkozás miatt megáll.</em></p>
-                <p><strong>Munkajárművek:</strong> Tilos a munkajárművek saját célra való használata. <br>↳ <em>Ebbe nem tartozik bele, hogy megállsz ételt/italt venni menet közben kitérő nélkül.</em></p>
-                <p><strong>Autóvásárlási megszólítás:</strong> Tilos csak úgy odafutni a játékosokhoz és megkérdezni, hogy eladó-e az autója! <br>↳ <em>IRL sem mész így oda az utcán senkihez, más változatai is tiltottak ennek.</em></p>
-                <p><strong>Visszatérés halál után:</strong> Nem térhetsz vissza ugyanabba a szituációba, ha a karaktered elhalálozott vagy súlyosan megsérült az RP során, még nézőnek sem. <br>↳ <em>Ez RK-nak minősül.</em></p>
-                <p><strong>Szerelőtelepek szerződései:</strong> A szerveren működő szerelőtelepekkel kizárólag a legális frakciók jogosultak szerződéskötésre. <br>↳ <em>NonScript frakció indokolt esetben SzuperAdmin engedélyével köthet szerződést.</em></p>
-                <p><strong>Helikopter kézifék:</strong> Helikopterben tilos behúzni a kéziféket levegőben. <br>↳ <em>Bugoltatásnak minősül.</em></p>
-                <p><strong>Helytelen /megpróbál:</strong> Egy RP szituációban egy cselekvésre vonatkozólag amennyiben nem sikerül az első /megpróbál, a következő előtt legalább 2-2 soros, igényes, a témához kapcsolódó /me /do kötelező! <br>↳ <em>Tilos floodolni a /megpróbált hátha egyszer csak sikerül. Mindegyiknek különböznie kell az előzőtől.</em></p>
-                <p><strong>CK (CharacterKill) feltételei:</strong> A CK kizárólag akkor tekinthető sikeresnek, ha a kivégzett fél is beleegyezik, amennyiben ő nem kívánja karakterét végleg befejezni ilyen módon nem kötelezhető rá! <br>↳ <em>Nem erőltetjük rá a saját RP-nket másra. A CK-nak minden esetben, többsoros és igényes RP-nek kell lennie (/me, /do, /say kötelező).</em></p>
-                <p><strong>Csomagtartozás:</strong> Járművekből való csomagtartozás engedélyezett. <br>↳ <em>Megfelelő RP-vel kipakolhatóak a kocsik csomagtartója, kivéve PP-s és event itemek.</em></p>
-                <p><strong>Ház és Garázs eladása:</strong> Házat és garázst csak együtt lehet eladni. <br>↳ <em>Nem adhatod el a házadhoz tartozó garázst külön, csak a házzal együtt.</em></p>
-                <p><strong>Fegyverek és Kiegészítők pozícionálása:</strong> Tilos a fegyverek oly módon pozícionálása, hogy a karakteren belül helyezkednek el, ezzel együtt ügyelni kell arra, hogy realisztikusak legyenek. A megvásárolható kiegészítőket reálisan kell használni, funolás tilos! <br>↳ <em>Ennek megszegése a kiegészítő levételét, adott esetben egyéb szankciót vonhat maga után.</em></p>
-                <p><strong>Kevlár használata:</strong> Kevlár használata csak indokolt esetben engedélyezett! <br>↳ <em>Csak akkor használd, ha olyan RP szituációban vagy / leszel!</em></p>
-                <p><strong>Voice Chat IC:</strong> IC a voice chatet kulturáltan, az RP szituációnak megfelelően kell használni! <br>↳ <em>Ezzel való funolás súlyos szankciót vonhat maga után!</em></p>
-                <p><strong>Telefonos képek feltöltése:</strong> Tilos a telefonos alkalmazásokba külső forrásból feltölteni képeket, csak a szerveren készített tartalmakat lehet felhasználni! <br>↳ <em>Ennek megszegése súlyos szankciót vonhat maga után!</em></p>
-            </div>
+        <!-- Egyedi rendszámokra vonatkozó szabályok -->
+        <div class="card" id="rendszam">
+            <h2>🚗 Egyedi rendszámokra vonatkozó szabályok</h2>
+            <p><span class="highlight">A szükséges elő-RP:</span> Az alapszintű RP-t jelent, hogy legalább 20 sornak kell lennie[cite: 2].</p>
+            <p><span class="highlight">Tilos rendszámírás:</span> Olyan szövegek, amik sértik a közerkölcsöt, vagy rasszista kifejezések[cite: 2].</p>
         </div>
 
-        <!-- 7. KÁRTYA: PP / Event itemek szabályai -->
-        <div class="card">
-            <h2>💎 PP / Event itemek szabályai</h2>
-            <div class="rule-list">
-                <p><strong>PP-s Item fogalma & Bizonylat:</strong> Minden olyan tárgy, ami prémium pontból (PP) lett vásárolva PP-s itemnek minősül. Erről fegyver esetén kapsz az inventorydba egy vásárlási bizonylatot. <br>↳ <em>Ha a bizonylat nincs nálad, a fegyvert elvehetik és később visszaigényelni sem tudod. Akárkinél van a fegyver, amíg van róla bizonylat PP-snek minősül. Vásárlási cédula hiányában utólag nem lehet visszakérni.</em></p>
-                <p><strong>Event itemek fogalma:</strong> Event itemnek minősül minden olyan tárgy, amit csak egy bizonyos időszakban lehet megszerezni a játékban egy event alkalmával. <br>↳ <em>Ajándék, Tök, Bónusztojás, Treasure és Mystery chest, csokitojás, ünnepi süti stb.</em></p>
-                <p><strong>PP Lőszerek lefoglalása:</strong> A prémiumpontból vásárolt lőszerek elvehetők bizonyíték felmutatása esetén is. <br>↳ <em>Tekintettel arra, hogy a lőszereknek nincs sorozatszámuk, így beazonosításuk nem lehetséges.</em></p>
-                <p><strong>Játékmenetet befolyásoló PP itemek:</strong> Játékmenetet befolyásoló itemeket csak abban az esetben lehet használni, ha az nem befolyásolja a többiek játékát. <br>↳ <em>Például: animból csak akkor szedheted fel magad ha nem vagy olyan RP helyzetben ami miatt fontos lenne, hogy animban is maradj.</em></p>
-                <p><strong>Respawn / Újraéledés kártya:</strong> A halálból magát bárki felélesztheti respawn kártyával, ugyanakkor nem folytathatja az adott RP szituációt és távoznia kell a helyszínről! <br>↳ <em>Legrövidebb úton távozni kell a helyszínről. A játékos feje felett "most éledt újra" felirat jelzi, hogy meghalt.</em></p>
-                <p><strong>Gyógyítás RP közben:</strong> RP közben tilos a gyógyítás. <br>↳ <em>Csak abban az esetben használhatod ha nem befolyásol senkit és semmit a te sérülésed állapota.</em></p>
-                <p><strong>Fixkártya használata:</strong> Fixkártyát tilos RP szituációban használni. <br>↳ <em>Üldözés végén akkor lehet megjavítani a járművet ha leráztad az üldözőket.</em></p>
-            </div>
-        </div>
-
-        <!-- 8. KÁRTYA: Rablással kapcsolatos szabályok -->
-        <div class="card">
-            <h2>⚔️ Rablással kapcsolatos szabályok</h2>
-            <div class="rule-list">
-                <p><strong>Rablás elő-RP követelménye:</strong> Rabláshoz szükséges az elő-RP! A szükséges elő-RP azt jelenti, hogy legalább 20 sornak kell lennie. <br>↳ <em>20 sor alatt nem lehet megfelelően megtervezni egy rablást. Tilos a bind-RP! Ha egyedül rabolsz, olyan karaktert kell alakítani, akinek ez nem karakteridegen.</em></p>
-                <p><strong>Megszólítás rablásnál:</strong> Rablás esetén az áldozat felszólítása esetleges /me /do parancsok használata kötelező. <br>↳ <em>Tudnia kell a játékosnak, hogy egy rablás áldozata lett.</em></p>
-                <p><strong>Rablás utáni ölés / bántalmazás:</strong> Tilos a rablás utáni ölés, kivéve ha nyomós indokod van rá! Tilos az áldozatot animba lőni/ütni, öngyilkosságra kényszeríteni, vagy megsebezni hogy elvérezzen! <br>↳ <em>Az nem nyomós indok, hogy látta az arcos vagy tudja hol laksz. Ez mind rablás utáni ölésnek számít.</em></p>
-                <p><strong>Kulcsok és iratok elvétele:</strong> Tilos rablás közben kulcsokat (interior, széf, kapu, autó) és iratokat (személyi, jogsi, jelvény) elvenni! <br>↳ <em>A vagyonmegőrzésre alkalmas tárgyak kinyittatása szigorúan tilos!</em></p>
-                <p><strong>Elvehető készpénz limit:</strong> Rablás során a maximális elvehető készpénz 350 000 $. <br>↳ <em>Ha többet ad át, OOC tájékoztatnod kell és a 350 000 $ feletti részt azonnal vissza kell adnod.</em></p>
-                <p><strong>Elvehető és TILTOTT tárgyak:</strong> A készpénzen kívül elvehetőek a tárgyak, KIVÉVE: Duty itemek, PP-s itemek és Event itemek! <br>↳ <em>Szigorúan tilos elvenni: névcédula, fix kártya, instant heal, tök, húsvéti tojás, ajándék, treasure/mystery chest, OBD, Taxi lámpa stb.</em></p>
-                <p><strong>Hirdetésből & Tesztvezetésből való rablás:</strong> Tilos hirdetésből vagy tesztvezetés közben kirabolni/elrabolni valakit! <br>↳ <em>Nem kezdeményezhetsz rablást ilyen esetekben.</em></p>
-                <p><strong>Fegyverek elvétele rablásnál:</strong> A fegyvereket rablás során elvehetik, KIVÉVE ha van vásárlási bizonylatod róla, hogy PP-ből lett vásárolva. <br>↳ <em>A bizonylatnak a játékosnál kell lennie a helyszínen.</em></p>
-                <p><strong>Animban lévő játékos rablása:</strong> Tilos animban lévő embert kirabolni! <br>↳ <em>Ha találsz az utcán egy animos embert, nem rabolhatod ki. Kivétel: ha maga a lövöldözés/akció során esett animba.</em></p>
-                <p><strong>Kezdő játékosok védelme:</strong> Tilos 4-es szint alatti (kezdő) játékost rabolni, elrabolni vagy kidobni a pálya szélén! <br>↳ <em>A 4-es szint alatti játékosok nem is vehetnek részt semmilyen rablásban.</em></p>
-            </div>
-        </div>
-
-        <!-- 9. KÁRTYA: Túszejtésre vonatkozó szabályok -->
-        <div class="card">
-            <h2>🚨 Túszejtésre vonatkozó szabályok</h2>
-            <div class="rule-list">
-                <p><strong>Túszejtés feltételei:</strong> Túszejtést kötelezően elő-RP-vel (minimum 20 sor) lehet szervezni, nyomós indok kell hozzá. A pénz hiánya nem nyomós indok! <br>↳ <em>Például: elkapta a rendvédelem az egyik fontos frakciótársatokat.</em></p>
-                <p><strong>Túsztárgyaló védelme:</strong> Tilos megölni a túsztárgyalót! <br>↳ <em>Mindaddig tilos, amíg nyomós indokot nem ad rá. Ha nem szól előre hogy közeledik és nem tudják hogy tárgyaló, a lelövése IC ügy.</em></p>
-                <p><strong>Váltságdíj és limit:</strong> Maximum 1 személy után kérhető váltságdíj, aminek az összege maximum 1 000 000 $ lehet. <br>↳ <em>Bármennyi túsz ejthető, de csak 1 után kérhető pénz. Ha a rendvédelem átadta a pénzt és meghaltál, köteles vagy visszaadni az admin segítségével.</em></p>
-                <p><strong>Gyakoriság & Frakció követelmény:</strong> Egy frakció 48 órán belül csak egyszer tarthat túszejtést és kérhet váltságdíjat! <br>↳ <em>Civilként vagy civil haveri társaságként TILOS túszdrámát RP-zni! Illegális vagy legitim NonScript frakció szükséges hozzá.</em></p>
-            </div>
-        </div>
-
-        <!-- 10. KÁRTYA: Átveréssel kapcsolatos szabályok -->
-        <div class="card">
+        <!-- Átveréssel kapcsolatos szabályok -->
+        <div class="card" id="atveres">
             <h2>💸 Átveréssel kapcsolatos szabályok</h2>
-            <div class="rule-list">
-                <p><strong>Átverési limit (50.000 $):</strong> Tilos átverni más embereket 50 000 $ érték felett! <br>↳ <em>Végleges kitiltást von maga után e szabálypont megszegése! (Pl. ha megbeszéltek valamit 350-be és átvered a "350 ezer" hiányára hivatkozva, az 50k feletti átverés).</em></p>
-                <p><strong>Fegyver állapota (Százalék):</strong> A fegyver százalékkal (állapottal) való átverés IC ügynek minősül. <br>↳ <em>Vásárlásnál el lehet kérni és meg lehet vizsgálni. DE: A PP-s fegyverekkel való átverés (akár százalék) továbbra is SÚLYOS BÜNTETÉST von maga után!</em></p>
-                <p><strong>PP és Event itemek átverése:</strong> TILOS a PP-s itemekkel és Event itemekkel való átverés! <br>↳ <em>Bármely PP-s vagy Eventes tárggyal (fixkártya, tojás, tök, ládák stb.) való átverés szigorúan tiltott.</em></p>
-                <p><strong>Hirdetésből való átverés:</strong> Hirdetésből engedélyezett az átverés legfeljebb 50 000 $ dollárig. <br>↳ <em>A rablással ellentétben átverni szabad hirdetésből a limitig.</em></p>
-                <p><strong>Tiltott átverési formák (Örök BANT vonnak maguk után):</strong> Nyereményjáték során való átverés, Házzal / Garázs méretével való átverés, Járművel / PP tuningokkal való átverés, Prémium kiegészítőkkel való átverés! <br>↳ <em>Tilos a felhasználók naivságát kihasználni többszörös átverésre. Elírt adásvételi esetén is kötelező a megbeszélt összeget kifizetni!</em></p>
-                <p><strong>IC Ügynek minősülő átverések (Szerver nem vállal felelősséget):</strong> A kölcsönadás és a Pénzduplázás teljes mértékben IC ügy! <br>↳ <em>Ha valakinek pénzt adsz kölcsön vagy duplázásra és nem adja vissza, a szerver nem tud felelősséget vállalni érte.</em></p>
-            </div>
+            <p><span class="highlight">Tilos átverni:</span> Ember 50 000 dollár felett[cite: 2]. Végleges kitiltást von maga után!</p>
+            <p><span class="highlight">PP itemek átverése:</span> Tilos bármely olyan tárggyal átverni, amivel pénzért/prémiummal vásárolható vagy PP-ből lett vásárolva[cite: 2].</p>
+            <p><span class="highlight">Tiltott átverési formák:</span> Nyereményjáték, házzal/garázs méretével, járművel/PP tuninggal való átverés örök bant von maga után.</p>
         </div>
 
-        <!-- 11. KÁRTYA: Hirdetésekre vonatkozó szabályok -->
-        <div class="card">
-            <h2>📢 Hirdetésekre vonatkozó szabályok</h2>
-            <div class="rule-list">
-                <p><strong>Hirdetés tartalma:</strong> Tárgy, autó, ház adás-vétel és csere hirdethető. <br>↳ <em>Normális, kerek, magyar mondatokban.</em></p>
-                <p><strong>Rablás hirdetésből:</strong> Tilos hirdetésből rabolni / kirabolni / elrabolni valakit! <br>↳ <em>Például: kihirdetem a házat, odajön a vevő és fegyvert fogok rá.</em></p>
-                <p><strong>NPC és játékos keresése:</strong> Tilos hirdetésben NPC-t, vagy másik játékost keresni. <br>↳ <em>Például: Fred barátomat keresem; Blueprintes NPC lelőhelye eladó.</em></p>
-                <p><strong>SealNion hirdetések:</strong> Tilos a SealNion hirdetésben a legális tárgyak árusítása! <br>↳ <em>Erre ott van a normál hirdetés. Megszegése hirdetéstörlést és szankciót von maga után.</em></p>
-            </div>
+        <!-- Rendvédelemre vonatkozó szabályok -->
+        <div class="card" id="rendvedelem">
+            <h2>🚨 Rendvédelemre vonatkozó szabályok</h2>
+            <p><span class="highlight">Tilos menteni a túszgyártást:</span> Ha a rendvédelmisek beavatkoznak, azt szigorúan a szabályok szerint kell tenni[cite: 2].</p>
+            <p><span class="highlight">Éles fegyver használat:</span> Csak életveszély esetén engedélyezett[cite: 2].</p>
+            <p><span class="highlight">Jelöletlen rendőrautók:</span> Tilos jelöletlen rendvédelmi járműre mindaddig lőni, amíg meg nem bizonyosodsz róla, hogy abban rendvédelmi személy tartózkodik.</p>
         </div>
 
-        <!-- 12. KÁRTYA: Akciók szabályai (ATM, Aranyraktár, Benzinkút) -->
-        <div class="card">
-            <h2>💥 Akciók szabályai (ATM, Aranyraktár, Benzinkút)</h2>
-            <div class="rule-list">
-                <p><strong>Alapvető feltételek:</strong> ATM, Aranyraktár és Benzinkút rablásához KÖTELEZŐ az illegális frakció tagság, a minimum 20 soros elő-RP (bind-RP tilos) és legalább 2 résztvevő jelenléte (egyedül tilos)! <br>↳ <em>Frakció nélkül vagy egyedül ezek az akciók szigorúan tiltottak!</em></p>
-                <p><strong>ATM Rablás speciális szabályai:</strong> Helikopterrel tilos kazettát szállítani (de az akcióban részt vehet). Tilos a gyár camp a rendvédelem részéről! <br>↳ <em>Halál után meg kell várni amíg eltűnik a "most éledt újra" jelzés mielőtt újabb rablásra mész.</em></p>
-                <p><strong>Aranyraktár Rablás speciális szabályai:</strong> Kötelező fegyvert használni! Tilos vontatóval elvinni az aranyszállítót, és tilos a javítókártyák használata rajta! Viccből/próbából elindítani kitiltást von maga után. <br>↳ <em>A rendvédelem nem környékezheti meg a helyszínt amíg a rendszer nem riaszt be.</em></p>
-                <p><strong>Benzinkút Rablás speciális szabályai:</strong> Helikopterrel tilos pénzköteget szállítani! Tilos az NPC camp a rendvédelem részéről! <br>↳ <em>Tilos irreálisan gyorsan újabb rabláshoz csatlakoznod halál után.</em></p>
-            </div>
+        <!-- Lövöldözéssel / illegális tevékenységekkel kapcsolatos szabályok -->
+        <div class="card" id="illem">
+            <h2>🔫 Lövöldözéssel / illegális tevékenységekkel kapcsolatos szabályok</h2>
+            <p><span class="highlight">Fegyver viselése:</span> Szigorúan tilos közterületen indokolatlanul fegyverrel rohangálni[cite: 2].</p>
+            <p><span class="highlight">Civil korlátozások:</span> Civilként tilos olyan akciókban részt venni, amit a script frakcióhoz köt (pl. ATM, aranybank rablás).</p>
+            <p><span class="highlight">Visszatérés halál után:</span> Tilos visszamenni lövöldözni az orvosi ellátás / halál után ugyanabba a szituációba (RK).</p>
         </div>
 
-        <!-- 13. KÁRTYA: Gyár & A Sziget szabályai -->
-        <div class="card">
-            <h2>🏝️ Gyár & A Sziget szabályai</h2>
-            <div class="rule-list">
-                <p><strong>A Gyár szabályai:</strong> A Gyár NEM minősül forgalmas helynek. Ott lehet rabolni és okkal lőni/ölni (elegendő indok ha más fegyveresek is vannak bent). A gyár IC ügy, a területet uraló szervezet vámot szedhet. <br>↳ <em>Tilos a rendvédelemnek a gyárnál várakoznia (gyár camp).</em></p>
-                <p><strong>A Sziget szabályai:</strong> A sziget NEM forgalmas hely, ott lehet rabolni és ölni. A játékosok szintje NEM számít (kezdőket is ki lehet rabolni!). <br>↳ <em>A szigetet TILOS védeni, hirdetni vagy hirdetésben keresni! Bármilyen járművel megközelíthető.</em></p>
-                <p><strong>Szigeti Ládák:</strong> A szigeten az új ládákat TILOS rabolni! (A szigeten kívül elvehetőek). A láda illegális itemnek számít, így csak SealNionban hirdethető. <br>↳ <em>A rendvédelemnek tilos a szigeten járőrözni/ellenőrizni, kivéve ha oda menekül a gyanúsított.</em></p>
-            </div>
-        </div>
-
-        <!-- 14. KÁRTYA: Lövöldözés & Illegális tevékenységek -->
-        <div class="card">
-            <h2>🔫 Lövöldözés & Illegális tevékenységek</h2>
-            <div class="rule-list">
-                <p><strong>Jelöletlen rendőrautók lőése:</strong> Tilos jelöletlen rendvédelmi járműre mindaddig lőni, amíg meg nem bizonyosodsz róla, hogy rendvédelmi személy tartózkodik benne (skin/mellény)! <br>↳ <em>Érdemes visszamenteni a pillanatot a félreértések elkerülésére.</em></p>
-                <p><strong>Fegyver elővétele & Forgalmas helyek:</strong> Fegyvert bárhol elő lehet venni. Forgalmas helyen ok nélkül tilos lőni, de NYOMÓS INDOKKAL forgalmas helyen is megengedett az ölés. <br>↳ <em>Ok nélkül sehol sem lövöldözünk.</em></p>
-                <p><strong>Civil korlátozások & Indokolatlan menekülés:</strong> Civilként tilos olyan akciókban részt venni, amit a script frakcióhoz köt (ATM, Aranybank, Benzinkút). Az indokolatlan menekülés TILOS! <br>↳ <em>Nem indok a menekülésre a jogosítvány vagy forgalmi hiánya, sem a minimális illegális tárgy jelenléte!</em></p>
-                <p><strong>Visszatérés ellátás után:</strong> Tilos visszamenni lövöldözni az orvosi ellátás után! <br>↳ <em>Ha a mentős ellátott a tűzharc után, ugyanabba a lövöldözésbe már nem mehetsz vissza.</em></p>
-            </div>
-        </div>
-
-        <!-- 15. KÁRTYA: Frakciókkal kapcsolatos szabályok -->
-        <div class="card">
-            <h2>🏢 Frakciókkal kapcsolatos szabályok</h2>
-            <div class="rule-list">
-                <p><strong>Túszejtési limit:</strong> Egy frakció 48 órán belül csak egyszer tarthat túszejtést és kérhet érte váltságdíjat! <br>↳ <em>Civilként tilos az ilyen akció. Megfelelő háttér kell hozzá.</em></p>
-                <p><strong>Rendőr a HQ-n:</strong> Ha egy illegális személy rendvédelmi karaktert lát a HQ-n, az még nem jogosítja fel arra, hogy azonnal erőszakot alkalmazzon ellene! <br>↳ <em>IRL sincs lelőve az a rendőr aki bemegy egy maffia kocsmájába.</em></p>
-                <p><strong>Illegális frakciók tagfelvétele:</strong> Tilos illegális frakcióknak fórum felvételt tartani jelentkezési lappal! <br>↳ <em>Kivétel: ha rendelkezik egy IC (ál)céggel reális lappal. Ennek megszegése frakció deaktiválást von maga után.</em></p>
-                <p><strong>Frakció vagyon / rang árusítása (Örök BANT von maga után):</strong> Tilos eladni a frakció járművekhez tartozó kulcsokat/itemeket, a frakció HQ-t vagy rangot árulni a frakcióban! <br>↳ <em>Ilyen esetekben végleges kitiltás a büntetés és a frakció megszüntetése!</em></p>
-                <p><strong>Taxis szabályzat:</strong> Taxisként (munka közben) senkit sem károsíthatsz meg, rabolhatsz ki azt kihasználva, hogy beül melléd! <br>↳ <em>Végleges kitiltást von maga után.</em></p>
-                <p><strong>OMSZ Szabály:</strong> Az OMSZ-nek minden esetben ki kell fizetni az ellátást! <br>↳ <em>A mentősök munkáját és az ellátási díjat tisztelni kell.</em></p>
-            </div>
-        </div>
-
-        <!-- 16. KÁRTYA: Tájékoztató & Általános feltételek -->
+        <!-- Tájékoztató & Felhasználási Feltételek -->
         <div class="card">
             <h2>📌 Tájékoztató & Felhasználási Feltételek</h2>
-            <div class="rule-list">
-                <p><strong>Szabályzat változtatásának joga:</strong> A szerver üzemeltetője/vezetőség tagjai fenntartják a jogot arra, hogy jelen szabályzatot bármikor, egyoldalúan megváltoztassák, illetve, hogy egyéni esetben a szabályzattól eltérően ítélkezzenek. A szerverre való felcsatlakozással automatikusan elfogadod az aktuális szabályzatot és tudomásul veszed azt.</p>
-                <p><strong>Prémium Pont (PP):</strong> A Prémium Pont vásárlása nem mentesít a szabályzat betartása alól.</p>
-                <p><strong>Fiók biztonsága és felelősség:</strong> Mindenkinek saját felelőssége hogy az account jelszava kellően nehezen kitalálható legyen és titokban maradjon. Mivel egy account tulajdonosa nem azonosítható be egyértelműen, ezért az ellopott, "feltört" accountok visszaszerzésében nem minden esetben tudunk segíteni. Nem számít, hogy ki használta az adott accountot a szabálysértés idején, így, az minden esetben felfüggesztésre kerül.</p>
-                <p><strong>RiseMTA szabályzat elfogadása:</strong> A RiseMTA-n regisztráló, játszó személy vállalja a szabályzat teljes körű betartását, elfogadja a feltételeket és annak minden alapját, amennyiben ezt nem teszi meg, nem játszhat a szerveren, avagy már játszó játékos esetén azonnali kitiltásra kerül. Egyúttal a regisztráló személy kijelenti azt is, hogy tudomásul vett minden dolgot és feltételt a játékhoz, megfelel minden elvárásnak, illetve a szabály nem tudása nem mentesíti fel a betartása alól.</p>
-                <p><strong>Korhatár (PEGI):</strong> A regisztráló, vagy már játszó személy életkora a Grand Theft Auto San Andreas játék PEGI alapján megszabott minimum életkora (18). <br>↳ <em>Ez az információ irányadó jellegű, a RiseMTA nem vállal felelősséget a korhatárt el nem ért játékosokért, az őket ért bármilyen ebből fakadó sérelemért.</em></p>
-                <p><strong>Regisztrációs szándék & RP Alapismeretek:</strong> A regisztrálási szándék nem lehet ártó szándék, sem rosszindulatú jellegű. A regisztrációhoz szükség van RP Alapismeretekre, melyekre a szerver szabályzata nem minden esetben tér részletesen ki. Ezen ismeretek megszerzésének módjához javasoljuk a külső forrásokat. A regisztráló egyben elfogadja, hogy amennyiben ezekkel az ismeretekkel nem rendelkezik, vállalja a következményeket. A regisztrációhoz és a játékhoz elengedhetetlen az általános műveltség és a helyesírási készség.</p>
-            </div>
+            <p><span class="highlight">Szabályzat változtatása:</span> A vezetőség fenntartja a jogot a szabályzat egyoldalú módosítására. A szerverre való felcsatlakozással automatikusan elfogadod az aktuális szabályzatot.</p>
+            <p><span class="highlight">Fiók biztonsága:</span> Mindenkinek saját felelőssége a jelszava titokban tartása. Feltört accountokért a szerver nem minden esetben tud felelősséget vállalni.</p>
+            <p><span class="highlight">Korhatár (PEGI):</span> A játék a GTA San Andreas PEGI besorolása alapján 18 éven felülieknek ajánlott.</p>
         </div>
 
     </div>
+
+    <!-- Lábléc -->
+    <footer>
+        <div class="footer-logo">
+            <img src="./logo.png" alt="GUIDMTA Logo">
+            GUIDMTA
+        </div>
+        <div>A legmodernebb magyar RolePlay közösség © 2026</div>
+    </footer>
 
 </body>
 </html>
